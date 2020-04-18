@@ -5,7 +5,7 @@ import {
   normalizeValue, normalizePhone, normalizeZipCode
 } from "./normalizers";
 
-export class Utilities {
+export default class Utilities {
 
   static IS_EMPTY = "IS_EMPTY";
   static FORMAT_WITH_LEFT_ZERO = "FORMAT_WITH_LEFT_ZERO";

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
-import { Utilities } from 'vwapp-utilities';
+import Utilities from 'vwapp-utilities';
 
 class App extends Component {
   render() {

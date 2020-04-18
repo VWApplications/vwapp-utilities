@@ -43,6 +43,7 @@ export class Utilities {
   static CNPJ = "CNPJ";
   static MONEY = "MONEY";
   static PHONE = "PHONE";
+  static ZIP_CODE = "ZIP_CODE";
   static NUMBER = "NUMBER";
 
   static normalize(type, value) {
@@ -61,8 +62,10 @@ export class Utilities {
         return normalizeValue(value);
       case this.PHONE:
         return normalizePhone(value);
-      case this.NUMBER:
+      case this.ZIP_CODE:
         return normalizeZipCode(value);
+      case this.NUMBER:
+        return onlyNumbers(value);
       default:
         return null;
     }

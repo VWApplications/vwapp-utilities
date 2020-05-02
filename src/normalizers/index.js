@@ -3,3 +3,4 @@ export { normalizeCPF, normalizeCNPJ } from "./document";
 export { normalizeValue } from "./money";
 export { normalizePhone } from "./phone";
 export { normalizeZipCode } from "./zipCode";
+export { normalizeCardCVC, normalizeCardExpirationDate, normalizeCardNumber } from "./card";

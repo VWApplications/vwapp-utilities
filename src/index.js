@@ -2,7 +2,8 @@ import { isEmpty, formatWithLeftZero, replaceAll, makeURL, toBoolean, onlyNumber
 import { validateCpf, validateCnpj, validateEmail, validatePhone, validatePhoto, isNumber } from "./validations";
 import {
   normalizeDate, normalizeTime, normalizeDatetime, normalizeCPF, normalizeCNPJ,
-  normalizeValue, normalizePhone, normalizeZipCode
+  normalizeValue, normalizePhone, normalizeZipCode, normalizeCardNumber,
+  normalizeCardExpirationDate, normalizeCardCVC
 } from "./normalizers";
 
 export const To = {
@@ -14,7 +15,10 @@ export const To = {
   MONEY: "MONEY",
   PHONE: "PHONE",
   ZIP_CODE: "ZIP_CODE",
-  NUMBER: "NUMBER"
+  NUMBER: "NUMBER",
+  CARD_NUMBER: "CARD_NUMBER",
+  CARD_EXPIRATION_DATE: "CARD_EXPIRATION_DATE",
+  CARD_CVC: "CARD_CVC"
 };
 
 export const By = {
@@ -79,6 +83,12 @@ export default class Utilities {
         return normalizeZipCode(value);
       case To.NUMBER:
         return onlyNumbers(value);
+      case To.CARD_NUMBER:
+        return normalizeCardNumber(value);
+      case To.CARD_EXPIRATION_DATE:
+        return normalizeCardExpirationDate(value);
+      case To.CARD_CVC:
+        return normalizeCardCVC(value);
       default:
         return null;
     }

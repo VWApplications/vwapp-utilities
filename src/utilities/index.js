@@ -24,8 +24,8 @@ export function toBoolean(value) {
   return (value === "true");
 }
 
-export const onlyNumbers = value => {
-  return value.replace(/[^\d]/g, "");
+export const onlyNumbers = (value, maxLength=value.length) => {
+  return value.replace(/[^\d]/g, "").slice(0, maxLength);
 };
 
 export const toString = (list = [], join = " ") => {

@@ -81,8 +81,6 @@ export default class Utilities {
         return normalizePhone(value);
       case To.ZIP_CODE:
         return normalizeZipCode(value);
-      case To.NUMBER:
-        return onlyNumbers.apply(null, value, [...arguments].slice(2));
       case To.CARD_NUMBER:
         return normalizeCardNumber(value);
       case To.CARD_EXPIRATION_DATE:

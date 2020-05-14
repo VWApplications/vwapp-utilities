@@ -1,6 +1,6 @@
 {
   "name": "vwapp-utilities",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Funções uteis para projetos em javascript.",
   "keywords": [
     "react",
@@ -37,13 +37,15 @@
     "node-cnpj": "^1.0.8",
     "node-cpf": "^1.0.21",
     "react": "^16.0.0",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sweetalert2": "^9.10.13"
   },
   "peerDependencies": {
     "node-cnpj": "^1.0.8",
     "node-cpf": "^1.0.21",
     "react": "^16.0.0",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sweetalert2": "^9.10.13"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

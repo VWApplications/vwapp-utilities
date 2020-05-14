@@ -1,5 +1,6 @@
 import { isEmpty, formatWithLeftZero, replaceAll, makeURL, toBoolean, onlyNumbers, toString } from "./utilities";
 import { validateCpf, validateCnpj, validateEmail, validatePhone, validatePhoto, isNumber } from "./validations";
+import { infoAlert, successAlert, errorAlert, loadingAlert, choiceAlert, closeSwal } from "./utilities/alerts";
 import {
   normalizeDate, normalizeTime, normalizeDatetime, normalizeCPF, normalizeCNPJ,
   normalizeValue, normalizePhone, normalizeZipCode, normalizeCardNumber,
@@ -40,7 +41,35 @@ export const Run = {
   LIST_TO_STRING: "LIST_TO_STRING"
 };
 
+export const Type = {
+  INFO: "INFO",
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
+  LOADING: "LOADING",
+  CHOICE: "CHOICE",
+  CLOSE: "CLOSE"
+};
+
 export default class Utilities {
+
+  static alert(type) {
+    switch (type) {
+      case Type.INFO:
+        return infoAlert.apply(null, [...arguments].slice(1));
+      case Type.SUCCESS:
+        return successAlert.apply(null, [...arguments].slice(1));
+      case Type.ERROR:
+        return errorAlert.apply(null, [...arguments].slice(1));
+      case Type.LOADING:
+        return loadingAlert.apply(null, [...arguments].slice(1));
+      case Type.CHOICE:
+        return choiceAlert.apply(null, [...arguments].slice(1));
+      case Type.CLOSE:
+        return closeSwal();
+      default:
+        return null;
+    }
+  }
 
   static method(type) {
     switch (type) {
